@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        Colour cl = new Colour();
         String code = "";
         String desc = "";
         String rate = "";
@@ -29,6 +30,10 @@ public class Main {
         //Instantiating the StringBuffer class to hold the result
 //        StringBuffer sb = new StringBuffer();
         int i = 0;
+        System.out.println(cl.gul("Valuta Converter 2022."));
+        System.out.println(" ");
+        System.out.println(cl.gul("Exchange rates 👇"));
+        System.out.println(" ");
         while (sc.hasNext()) {
             String nextLine = sc.next();
 //            sb.append(nextLine);
@@ -69,7 +74,6 @@ public class Main {
 
         main.print();
         System.out.println(" ");
-        System.out.println(" ");
         System.out.println("Convert from? [VALUTACODE]");
         input = scan.nextLine();
         for (Rateinfo a : rateinfos
@@ -84,14 +88,16 @@ public class Main {
                 ) {
                     if (b.code.equalsIgnoreCase(slutKode)) {
                         tilKurs = Double.parseDouble(b.rate);
-                        System.out.println(beløb + " " + a.code + " converterted to " + slutKode + " equals " +
-                                (beløb * fraKurs / tilKurs + " " + slutKode.toUpperCase(Locale.ROOT)));
+                        System.out.println(" ");
+                        System.out.println(cl.grøn(beløb + " " + a.code + " converterted to " + slutKode + " equals " +
+                                (beløb * fraKurs / tilKurs + " " + slutKode.toUpperCase(Locale.ROOT))));
 
                     }
                 }
 
 
             }
+
         }
 
     }
